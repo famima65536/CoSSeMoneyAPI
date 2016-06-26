@@ -1,0 +1,12 @@
+name: CoSSeMoneyAPI
+main: popkechupki\CoSSeMoneyAPI
+version: 0.0.1
+api: [1.13.0, 2.0.0]
+load: POSTWORLD
+author: popkechupki
+description: "CosmoSunriseServer's Money API plugin."
+commands:
+ money:
+  description: "所持金を確認できます。"
+ pay:
+  description: "支払いができます。"
