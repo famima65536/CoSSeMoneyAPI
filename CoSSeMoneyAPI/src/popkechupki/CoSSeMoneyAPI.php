@@ -23,7 +23,6 @@ class CoSSeMoneyAPI extends PluginBase implements Listener{
 	
 	public function onjoin(PlayerJoinEvent $event){
 		$user = $event->getPlayer()->getName();
-		$this->user = new Config($this->getDataFolder() . "user.yml", Config::YAML);
 		if(!$this->user->exists($user)){
 			$this->user->set($user,500);
 			$this->user->save();
@@ -32,7 +31,6 @@ class CoSSeMoneyAPI extends PluginBase implements Listener{
 	}
 	
 	public function get($user){
-		$this->user = new Config($this->getDataFolder() . "user.yml", Config::YAML);
 		if($this->user->exists($user)){
 			return $this->user->get($user);
 		}else{
@@ -43,7 +41,6 @@ class CoSSeMoneyAPI extends PluginBase implements Listener{
 	}
 	
 	public function set($user,$price){
-		$this->user = new Config($this->getDataFolder() . "user.yml", Config::YAML);
 		if($this->user->exists($user)){
 			$this->user->set($user,$price);
 			$this->user->save();
@@ -82,7 +79,7 @@ class CoSSeMoneyAPI extends PluginBase implements Listener{
         				}
         			}
         			break;
+        		}
         	}
-        }
 	}
 }
